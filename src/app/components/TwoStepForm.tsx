@@ -57,10 +57,11 @@ export const TwoStepForm = ({ step, setStep }: TwoStepFormProps) => {
 
   return (
     <div className="flex flex-col p-4 gap-4 text-black max-w-md mx-auto">
-      <h1 className="text-xl font-semibold text-center">Some instructions</h1>
-
       {step === 1 && (
         <>
+          <h1 className="text-xl font-semibold text-center">
+            Some instructions
+          </h1>
           <label className="font-medium">First name</label>
           <input
             className="p-4 rounded-full border border-indigo-500"
@@ -96,6 +97,9 @@ export const TwoStepForm = ({ step, setStep }: TwoStepFormProps) => {
 
       {step === 2 && (
         <>
+          <h1 className="text-xl font-semibold text-center">
+            Lets validate your number
+          </h1>
           <label className="font-medium">Phone Number</label>
 
           <PhoneInput
