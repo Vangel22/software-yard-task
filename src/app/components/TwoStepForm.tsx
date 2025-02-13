@@ -9,6 +9,12 @@ interface TwoStepFormProps {
   setStep: (step: number) => void;
 }
 
+interface FormErrors {
+  firstname: string;
+  lastname: string;
+  phoneNumber: string;
+}
+
 export const TwoStepForm = ({ step, setStep }: TwoStepFormProps) => {
   const router = useRouter();
 
@@ -35,7 +41,11 @@ export const TwoStepForm = ({ step, setStep }: TwoStepFormProps) => {
   };
 
   const handleNext = () => {
-    const newErrors: any = { firstname: "", lastname: "" };
+    const newErrors: FormErrors = {
+      firstname: "",
+      lastname: "",
+      phoneNumber: "",
+    };
     if (!formData.firstname) newErrors.firstname = "First name is required";
     if (!formData.lastname) newErrors.lastname = "Last name is required";
 
